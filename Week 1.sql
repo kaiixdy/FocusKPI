@@ -14,7 +14,7 @@ FROM Invoice i
 WHERE NOT BillingAddress  = '' AND NOT BillingCity = '' 
 	AND NOT BillingPostalCode = '' AND NOT BillingState = ''
 
--- 4. In the table “Invoice”, how many invoices they sold in 2008? Comparing to 2007, what % of growth/decline we saw? 1% growth rate
+-- 4. In the table “Invoice”, how many invoices they sold in 2008? Comparing to 2007, what % of growth/decline we saw? 0% growth rate
 SELECT COUNT(InvoiceId)
 FROM Invoice i 
 WHERE InvoiceDate >= '2007-01-01 00:00:00' 
@@ -27,7 +27,7 @@ WHERE InvoiceDate >= '2008-01-01 00:00:00'
 	AND InvoiceDate < '2009-00:00:00'
 --# of invoices in 2008: 83
 	
-SELECT (83/83) AS percent_of_growth
+SELECT (83/83 -1) AS percent_of_growth
 
 -- 5. In the table “InvoiceLine”, how many different unit price they offered? 2
 SELECT DISTINCT UnitPrice 
